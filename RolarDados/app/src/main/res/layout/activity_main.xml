@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/wallpaper"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Rolador de dados"
+        android:textColor="@android:color/background_light"
+        android:textSize="25sp"
+        app:fontFamily="@font/lemonmilkbold" />
+
+    <EditText
+        android:id="@+id/lados"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titulo"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        app:backgroundTint="@android:color/background_light"
+        android:hint="Número de lados"
+        android:inputType="number"
+        android:textColor="@android:color/background_light"
+        android:textColorHint="@android:color/background_light"
+        android:textSize="15sp"
+        app:fontFamily="@font/lemonmilklight" />
+
+    <EditText
+        android:id="@+id/vezes"
+        android:layout_width="247dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titulo"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_toEndOf="@id/lados"
+        android:layout_toRightOf="@id/lados"
+        app:backgroundTint="@android:color/background_light"
+        android:hint="Vezes"
+        android:inputType="number"
+        android:textColor="@android:color/background_light"
+        android:textColorHint="@android:color/background_light"
+        android:textSize="15sp"
+        app:fontFamily="@font/lemonmilklight" />
+
+    <RadioGroup
+        android:id="@+id/radio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/vezes"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-3dp"
+            android:text="Modificador:"
+            android:textColor="@android:color/background_light"
+            android:textSize="15sp"
+            app:fontFamily="@font/lemonmilklight" />
+        <RadioButton
+            android:id="@+id/positivo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:buttonTint="@android:color/background_light"
+            android:onClick="onRadioButtonClicked"
+            android:text="+"
+            android:textColor="@android:color/background_light"
+            android:textSize="20sp"
+            app:fontFamily="@font/lemonmilklight" />
+        <RadioButton
+            android:id="@+id/negativo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:buttonTint="@android:color/background_light"
+            android:onClick="onRadioButtonClicked"
+            android:text="-"
+            android:textColor="@android:color/background_light"
+            android:textSize="20sp"
+            app:fontFamily="@font/lemonmilklight" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/modf"
+        android:layout_width="247dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/vezes"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_toEndOf="@id/lados"
+        android:layout_toRightOf="@id/lados"
+        app:backgroundTint="@android:color/background_light"
+        android:hint="Valor"
+        android:inputType="number"
+        android:textColor="@android:color/background_light"
+        android:textColorHint="@android:color/background_light"
+        android:textSize="15sp"
+        app:fontFamily="@font/lemonmilklight" />
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/radio"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        app:backgroundTint="@android:color/transparent"
+        android:onClick="verificarDados"
+        android:text="ver resultado"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textSize="18dp"
+        app:fontFamily="@font/lemonmilk" />
+
+</RelativeLayout>
