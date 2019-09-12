@@ -9,25 +9,29 @@
 
     <TextView
         android:id="@+id/resultados"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
         android:textAlignment="center"
         android:textSize="20sp"
+        android:layout_above="@+id/botao"
+        android:layout_alignParentTop="true"
         app:fontFamily="@font/lemonmilklight"
-        android:textColor="@android:color/background_light" />
+        android:textColor="@android:color/background_light"
+        android:scrollbars="vertical"/>
 
     <Button
-        android:layout_width="500dp"
-        android:layout_height="100dp"
+        android:id="@+id/botao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="20dp"
         android:text="voltar"
         android:textColor="@android:color/holo_orange_dark"
-        android:textSize="18dp"
+        android:textSize="18sp"
         app:backgroundTint="@android:color/transparent"
         app:fontFamily="@font/lemonmilk"
         android:onClick="voltar" />

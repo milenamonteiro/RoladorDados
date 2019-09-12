@@ -44,11 +44,11 @@ public class MainActivity extends AppCompatActivity {
             case R.id.positivo:
                 if (checked)
                     boolmod = true;
-                    break;
+                break;
             case R.id.negativo:
                 if (checked)
                     boolmod = false;
-                    break;
+                break;
         }
     }
 
@@ -78,7 +78,9 @@ public class MainActivity extends AppCompatActivity {
         Integer vezes = Integer.parseInt(etvezes.getText().toString());
         Integer valormod = Integer.parseInt(etvalormod.getText().toString());
 
-        double min = 1, result, resultmod;
+        double min = 1;
+        int result, resultmod;
+        vezes++;
 
         String resultados = new String();
 
@@ -86,14 +88,16 @@ public class MainActivity extends AppCompatActivity {
         {
             min = Math.ceil (1);
             numlados = Math.floor (numlados);
-            result = Math.floor (Math.random () * (numlados)) + min;
+            result = (int) (Math.floor (Math.random () * (numlados)) + min);
+            resultados += String.format("\n\nResultado %o = %o%n", i, result, valormod);
             if(boolmod){
                 resultmod = result + valormod;
+                resultados += String.format("Modificador = + %o%nFinal = %o", valormod, resultmod);
             }
             else{
                 resultmod = result - valormod;
+                resultados += String.format("Modificador = - %o%nFinal = %o", valormod, resultmod);
             }
-            resultados += String.format("\nResultado %o: %s, modificador: %o, final = %s", i, result, valormod, resultmod);
         }
 
         Intent sendIntent = new Intent(MainActivity.this, ResultActivity.class);
